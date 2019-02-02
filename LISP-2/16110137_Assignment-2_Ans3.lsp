@@ -1,0 +1,7 @@
+(defun my-remv-dups (x) 
+(setq y (reverse x))
+(setq r (remover y))
+(return-from my-remv-dups (reverse r)))
+(defun remover (x)
+(if (equal 0 (length x)) (return-from remover (list )))
+(cons (car x) (remover (remove (car x) (cdr x) :test #'equal))))

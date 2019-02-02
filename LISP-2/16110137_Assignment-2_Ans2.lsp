@@ -1,0 +1,6 @@
+(defun my-insert (x y z)
+(if (> 0 z) (return-from my-insert nil))
+(if (not (typep z 'integer)) (return-from my-insert nil))
+(if (> z (length y)) (return-from my-insert (my-insert x y (length y))))
+(if (equal 0 z) (return-from my-insert (cons x y)))
+(cons (car y) (my-insert x (cdr y) (- z 1))))
